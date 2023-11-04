@@ -99,7 +99,7 @@
             <div class="text-green-600 lg:text-4xl font-bold font-helvetica break-words my-6">
                 Why Choose RestoKonnect
             </div>
-            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden">
+            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
                 <div class="flex justify-between my-7 lg:mx-24 items-center">
                     <div class="lg:my-24 lg:mx-2 p-1">
                         <p class="lg:text-4xl font-semibold break-words text-green-600">We can get your favorite Meals delivered Right to your door step.</p>
@@ -109,18 +109,17 @@
                     </div>
                 </div>
             </div>
-            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden">
+            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
                 <div class="flex justify-between my-7 lg:mx-24 items-center">
-                    <div class="p-1 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <div class="p-1">
                         <img class="rounded-lg h-2/3 lg:h-full" src="./img/Frame 52 (1).png" alt="frame1">
                     </div>
-<div class="lg:my-24 lg:mx-2 p-1 transform hover:translate-x-4 transition-transform duration-300 ease-in-out">
-  <p class="lg:text-4xl font-semibold break-words text-green-600">Get your to connect with the best Food Vendors in Nigeria.</p>
-</div>
-
+                    <div class="lg:my-24 lg:mx-2 p-1">
+                        <p class="lg:text-4xl font-semibold break-words text-green-600">Get your to connect with the best Food Vendors in Nigeria.</p>
+                    </div>
                 </div>
             </div>
-            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden">
+            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
                 <div class="flex justify-between my-7 lg:mx-24 items-center">
                     <div class="lg:my-24 lg:mx-2 p-1">
                         <p class="lg:text-4xl font-semibold break-words text-green-600">Affordable Delivery fees and 500N off on your first purchase.</p>
@@ -130,7 +129,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden">
+            <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
                 <div class="flex justify-between my-7 lg:mx-24 items-center">
                     <div class="p-1">
                         <img class="rounded-lg h-2/3 lg:h-full" src="./img/Frame 52 (2).png" alt="frame1">
@@ -146,13 +145,13 @@
                 <h2 class="text-white break-words md:text-4xl font-bold text-sm">Register to become one of restoconnect team </h2>
             </div>
             <div class="flex justify-around p-2 gap-2">
-                <div>
+                <div class="transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img src="./img/food_vendor.png" alt="food_vendor">
-                    <p class="text-white lg:text-2xl font-semibold lg:ml-20 lg:my-6 ml-10">Vendor</p>
+                    <p class="text-white lg:text-2xl font-semibold lg:ml-20 lg:my-6 ml-10  hover:text-yellow-600 transition duration-300 ease-in-out">Vendor</p>
                 </div>
-                <div class="">
+                <div class="transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img src="./img/Dispatch_rider.png" alt="disptch_rider">
-                    <p class="text-white lg:text-2xl font-semibold lg:ml-20 lg:my-6 ml-10">Delivery</p>
+                    <p class="text-white lg:text-2xl font-semibold lg:ml-20 lg:my-6 ml-10  hover:text-yellow-600 transition duration-300 ease-in-out">Delivery</p>
                 </div>
             </div>
         </section>
@@ -165,22 +164,22 @@
                 <div class=" my-16">
                     <a class="flex gap-3 my-2" href="">
                         <img src="./img/icons/round-place-24px.png" alt="">
-                        <span class="text-green-600">345 Faulconer Drive, Suite 4 • Charlottesville, CA, 12345</span>
+                        <span class="text-green-600  hover:text-yellow-600 transition duration-300 ease-in-out">345 Faulconer Drive, Suite 4 • Charlottesville, CA, 12345</span>
                     </a>
                     <a class="flex gap-3 my-2" href="">
                         <img src="./img/icons/round-phone-24px.png" alt="">
-                        <span class="text-green-600">(+123) 456-7890</span>
+                        <span class="text-green-600  hover:text-yellow-600 transition duration-300 ease-in-out">(+123) 456-7890</span>
                     </a>
                     <div class="flex gap-5 items-center mt-8 ml-2">
                         <p class="text-[#489B53]">Social Media</p>
                         <a href="">
-                            <img src="./img/icons/linkedin black.1.png" alt="">
+                            <img class="transform hover:scale-150 transition-transform duration-300 ease-in-out" src="./img/icons/linkedin black.1.png" alt="">
                         </a>
                         <a href="">
-                            <img src="./img/icons/facebook black.1.png" alt="">
+                            <img class="transform hover:scale-150 transition-transform duration-300 ease-in-out" src="./img/icons/facebook black.1.png" alt="">
                         </a>
                         <a href="">
-                            <img src="./img/icons/twitter black.1.png" alt="">
+                            <img class="transform hover:scale-150 transition-transform duration-300 ease-in-out" src="./img/icons/twitter black.1.png" alt="">
                         </a>
                     </div>
                 </div>
