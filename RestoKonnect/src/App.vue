@@ -44,7 +44,9 @@
             <div class="w-full text-gray-800 text-base md:text-lg lg:text-4xl font-poppins font-medium leading-30 break-words">
             Savor dishes born from passion, love, and expertise, all conveniently accessible through our seamless and intuitive platform.
             </div>
-            <button class="bg-green-600 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded mt-2">Get Started</button>
+            <button class="bg-green-600 hover:bg-yellow-600 text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                Get Started
+            </button>
         </div>
         <div class="md:w-1/2 mt-5 md:mt-0">
             <img src="./img/image 5.png" alt="burger image" class="w-full h-auto">
@@ -53,44 +55,44 @@
       <div class="bg-green-600 mt-3 p-3 ">
             <h2 class="text-white text-2xl lg:text-4xl font-poppins font-semibold break-words">Explore Restaurants</h2>
             <div class="mt-5 flex flex-wrap gap-4 lg:justify-around">
-                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg">
+                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full" src="./img/restaurant_banner2.jpeg" alt="Card Image">
                     <div class="px-2 py-4 bg-white flex items-center justify-between">
                         <span class="font-bold text-xl mb-2 w-auto mt-3">KAYON KITCHEN</span>
-                        <button class="bg-green-600 hover:bg-green-500 text-white font-semibold p-2 rounded">View Menu</button>
+                        <button class="bg-green-600 hover:bg-yellow-600 text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">View Menu</button>
                     </div>
                 </div>
-                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg">
+                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full" src="./img/restaurant_banner2.jpeg" alt="Card Image">
                     <div class="px-2 py-4 bg-white flex items-center justify-between">
                         <span class="font-bold text-xl mb-2 w-auto mt-3">KAYON KITCHEN</span>
-                        <button class="bg-green-600 hover:bg-green-500 text-white font-semibold p-2 rounded">View Menu</button>
+                        <button class="bg-green-600 hover:bg-yellow-600 text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">View Menu</button>
                     </div>
                 </div>
-                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg">
+                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full" src="./img/restaurant_banner2.jpeg" alt="Card Image">
                     <div class="px-2 py-4 bg-white flex items-center justify-between">
                         <span class="font-bold text-xl mb-2 w-auto mt-3">KAYON KITCHEN</span>
-                        <button class="bg-green-600 hover:bg-green-500 text-white font-semibold p-2 rounded">View Menu</button>
+                        <button class="bg-green-600 hover:bg-yellow-600 text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">View Menu</button>
                     </div>
                 </div>
-                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg">
+                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full" src="./img/restaurant_banner2.jpeg" alt="Card Image">
                     <div class="px-2 py-4 bg-white flex items-center justify-between">
                         <span class="font-bold text-xl mb-2 w-auto mt-3">KAYON KITCHEN</span>
-                        <button class="bg-green-600 hover:bg-green-500 text-white font-semibold p-2 rounded">View Menu</button>
+                        <button class="bg-green-600 hover:bg-yellow-600 text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">View Menu</button>
                     </div>
                 </div>
-                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg">
+                <div class="max-w-xs rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full" src="./img/restaurant_banner2.jpeg" alt="Card Image">
                     <div class="px-2 py-4 bg-white flex items-center justify-between">
                         <span class="font-bold text-xl mb-2 w-auto mt-3">KAYON KITCHEN</span>
-                        <button class="bg-green-600 hover:bg-green-500 text-white font-semibold p-2 rounded">View Menu</button>
+                        <button class="bg-green-600 hover:bg-yellow-600 text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">View Menu</button>
                     </div>
                 </div>
             </div>
             <div class="flex justify-end mx-5">
-                <button class="bg-white hover:bg-green-500 text-green-600 font-semibold py-2 px-4 rounded mt-2">See More</button>
+                <button class="bg-white hover:text-yellow-600 text-green-600 font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5">View Menu</button>
             </div>
         </div>
         <section class="flex flex-wrap gap-3 justify-center">
@@ -109,12 +111,13 @@
             </div>
             <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden">
                 <div class="flex justify-between my-7 lg:mx-24 items-center">
-                    <div class="p-1">
+                    <div class="p-1 transform hover:scale-105 transition-transform duration-300 ease-in-out">
                         <img class="rounded-lg h-2/3 lg:h-full" src="./img/Frame 52 (1).png" alt="frame1">
                     </div>
-                    <div class="lg:my-24 lg:mx-2 p-1">
-                        <p class="lg:text-4xl font-semibold break-words text-green-600">Get your to connect with the best Food Vendors in Nigeria .</p>
-                    </div>
+<div class="lg:my-24 lg:mx-2 p-1 transform hover:translate-x-4 transition-transform duration-300 ease-in-out">
+  <p class="lg:text-4xl font-semibold break-words text-green-600">Get your to connect with the best Food Vendors in Nigeria.</p>
+</div>
+
                 </div>
             </div>
             <div class="border-2 rounded-lg border-green-400 w-5/6 overflow-hidden">
