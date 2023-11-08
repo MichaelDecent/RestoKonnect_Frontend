@@ -1,5 +1,28 @@
 <script setup>
-    import Logo from "../components/Logo.vue"
+    import Logo from "../components/Logo.vue";
+    import { ref } from "vue";
+    import axios from "axios";
+    import { useRouter } from "vue-router";
+
+    const custPhone_no = ref("");
+    const router = useRouter();
+
+
+    const submitForm = async () => {
+        const formData = new FormData()
+        formData.append('phone_no', custPhone_no.value)
+
+        try {
+            const response = await axios.post('http://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/customer_login', formData);
+            localStorage.setItem('token', response.data.access_token);
+            router.push('/home')
+
+        } catch (error) {
+            alert(error.response.data.message)
+            console.log("Login Failed:", error)
+        }
+    }
+
 </script>
 
 <template>
@@ -13,15 +36,15 @@
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                             Sign In
                     </h1>
-                    <form class="space-y-4 md:space-y-6" action="#">
+                    <form @submit.prevent="submitForm" class="space-y-4 md:space-y-6" action="#">
                         <div>
                             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                            <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                            <input v-model="custPhone_no" type="tel" name="phone" id="phone" placeholder="Enter your phone number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-ryellow focus:border-ryellow block w-full p-2.5" required>
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex items-start">
                                 <div class="flex items-center h-5">
-                                    <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                                    <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-ryellow">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="remember" class="text-gray-500">Remember me</label>
