@@ -28,7 +28,7 @@
             formData.append('address', restaurantData.value.address)
             formData.append('image', imagefile.value)
 
-            const response = await axios.post(`http://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1${currentPath.value}`, formData);
+            const response = await axios.post(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1${currentPath.value}`, formData);
             alert("upload successful")
 
         } catch (error) {

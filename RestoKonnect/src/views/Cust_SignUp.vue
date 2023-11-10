@@ -22,7 +22,7 @@
             formData.append('email', custSignUpData.value.email)
             formData.append('address', custSignUpData.value.address)
 
-            const response = await axios.post('http://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/customers', formData);
+            const response = await axios.post('https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/customers', formData);
             router.push('/customerSignIn')
 
         } catch (error) {

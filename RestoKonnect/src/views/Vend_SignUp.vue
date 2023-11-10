@@ -26,7 +26,7 @@
             formData.append('password', vendorSignUpData.value.password)
             formData.append('address', vendorSignUpData.value.address)
 
-            const response = await axios.post('http://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/vendors', formData);
+            const response = await axios.post('https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/vendors', formData);
             console.log(response.data)
             router.push('/vendorSignIn')
 

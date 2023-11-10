@@ -16,7 +16,7 @@
         formData.append('password', vendorPassword.value)
 
         try {
-            const response = await axios.post('http://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/vendor_login', formData);
+            const response = await axios.post('https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/vendor_login', formData);
             localStorage.setItem('token', response.data.access_token);
             const id = response.data.id
             router.push(`/vendors/${id}`)
