@@ -23,7 +23,7 @@
                         </RouterLink>
                     </li>
                     <li class="relative group">
-                        <RouterLink to="#" class="text-rgreen-100 hover:text-ryellow transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
+                        <RouterLink to="/vendorSignIn" class="text-rgreen-100 hover:text-ryellow transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
                             Vendor
                             <div class="absolute w-full h-1 bg-ryellow bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
                         </RouterLink>
