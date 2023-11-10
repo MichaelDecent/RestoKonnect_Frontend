@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div class="bg-white p-5 md:p-10 mx-5">
+    <div class="bg-white p-5 md:p-10 md:mx-5">
         <header class="flex flex-col md:flex-row justify-between items-center">
             <Logo />
             <nav class="mt-4 md:mt-0">
