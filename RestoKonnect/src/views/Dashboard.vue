@@ -279,16 +279,16 @@
                 </div>
             </div>
         </div>
-        <div class="lg:mt-16 mt-5 relative lg:mx-10 lg:grid lg:grid-cols-6 pb-5  gap-5 w-1120px md:w-85vw overflow-x-auto rounded-lg p-3 flex flex-wrap">
-                <div v-for="item in restoItems" :key="item.id" class=" w-64 h-80  border border-rgreen-100 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
+        <div class="lg:mt-16 mt-5 relative lg:mx-10 lg:grid lg:grid-cols-5 pb-5  gap-5 w-1120px md:w-85vw overflow-x-auto rounded-lg p-3 flex flex-wrap">
+                <div v-for="item in restoItems" :key="item.id" class=" w-80 h-80 border border-rgreen-100 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full h-2/4 " :src="item.image" alt="Card Image">
-                    <input @change="itemHandleFileChange" type="file" name="" id="">
-                    <button @click="updateItemImage(item.id)" class="mx-2 my-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white p-1 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
+                    <input @change="itemHandleFileChange" type="file" name="" id="" class="mx-2">
+                    <button @click="updateItemImage(item.id)" class="mx-2 my-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white py-1 px-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
                     <div class="h-1/2 bg-white">
-                        <input v-model="itemData.name" type="text" class="mx-2 border text-sm pl-2" :placeholder="item.name">
-                        <button @click="updateItemName(item.id)" class="my-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white p-1 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
-                        <input v-model="itemData.price" class="text-sm pl-2 border mx-2" :placeholder="item.price">
-                        <button @click="updateItemPrice(item.id)" class="my-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white p-1 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
+                        <input v-model="itemData.name" type="text" class="mx-2 border text-sm p-1" :placeholder="item.name">
+                        <button @click="updateItemName(item.id)" class="my-2 ml-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white py-1 px-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
+                        <input v-model="itemData.price" class="text-sm p-1 border mx-2" :placeholder="item.price">
+                        <button @click="updateItemPrice(item.id)" class="my-2 ml-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white py-1 px-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
                     </div>
                 </div>
             </div>
