@@ -2,7 +2,7 @@
     import Logo2 from "../components/Logo2.vue"
 </script>
 <template>
-    <div class=" border-y-2 border-white flex justify-around items-center bg-rgreen-100">
+    <div class="border-y border-white flex justify-between items-center">
         <div class="my-20">
             <Logo2/>
         </div>
@@ -34,5 +34,12 @@
                     </a>
                 </div>
         </div>
+    </div>
+    <div>
+        <ul class="flex gap-10 text-white">
+            <li class="hover:text-ryellow">ABOUT US</li>
+            <li class="hover:text-ryellow">CONTACT US</li>
+            <li class="hover:text-ryellow">HELP</li>
+        </ul>
     </div>
 </template>

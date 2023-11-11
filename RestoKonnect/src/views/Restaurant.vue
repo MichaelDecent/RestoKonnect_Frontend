@@ -56,11 +56,12 @@
         </div>
         <div class="flex justify-between">
             <div class="p-10" >
-                <div class="h-full w-full rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="h-96 w-96 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full h-full" :src="restaurant.image" alt="Card Image">
                 </div>
-                <div class="px-2 py-4 bg-white flex items-center justify-between">
-                    <span class="font-extrabold lg:text-4xl mb-2 w-auto mt-3">{{ restaurant.name }}</span>
+                <div class="px-2 py-4 bg-white">
+                    <h1 class="font-extrabold lg:text-4xl mb-2 w-auto mt-3">{{ restaurant.name}}</h1>
+                    <p class="text-xl text-gray-600">{{ restaurant.address }}</p>
                 </div>
             </div>
             <div class="border-2 p-20 bg-[#FAFFFB]">
@@ -79,19 +80,17 @@
         </div>
         <div class=" mt-20">
             <h2 class="text-rgreen-100 text-2xl lg:text-4xl font-poppins font-semibold break-words lg:ml-10 mt-5">All Menu</h2>
-            <div class="mt-5 relative lg:mx-10 lg:grid lg:grid-cols-3 pb-5 lg:pl-36 gap-4 w-1120px md:w-85vw overflow-x-auto border-2 border-rgreen-100 rounded-lg p-3 flex flex-wrap">
-                <div  v-for="item in items" class="max-w-xs h-fit border-2 border-rgreen-100 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl">
-                    <img class="w-full transform hover:scale-105 transition-transform duration-300 ease-in-out" :src="item.image" alt="Card Image">
-                    <div>
-                        <div class="px-2 py-4 bg-white flex items-center justify-between">
-                            <span class="font-bold lg:text-xl mb-2 w-auto mt-3">{{ item.name }}</span>
-                            <div class="flex items-center gap-3">
-                                <button class="text-xl">+</button>
-                                <div class="rounded-full bg-[#DAEBDD] w-10 h-10 flex justify-center items-center">
-                                    <span>2</span>
-                                </div>
-                                <button class="text-2xl">-</button>
+            <div class="mt-5 relative lg:mx-10 lg:grid lg:grid-cols-3 pb-5 lg:pl-36 gap-4 w-1120px md:w-85vw overflow-x-auto p-3 flex flex-wrap">
+                <div  v-for="item in items" class="w-96 h-96 border-2 border-rgreen-100 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl">
+                    <img class="w-full h-3/4 transform hover:scale-105 transition-transform duration-300 ease-in-out" :src="item.image" alt="Card Image">
+                    <div class="px-2 py-2 bg-white flex items-center justify-between">
+                        <span class="font-bold lg:text-xl mb-2 w-auto mt-3">{{ item.name }}</span>
+                        <div class="flex items-center gap-3">
+                            <button class="text-xl">+</button>
+                            <div class="rounded-full bg-[#DAEBDD] w-10 h-10 flex justify-center items-center">
+                                <span>2</span>
                             </div>
+                            <button class="text-2xl">-</button>
                         </div>
                     </div>
                     <div class="flex justify-end px-3 pb-2">
@@ -105,7 +104,7 @@
                 </button>
             </div>
         </div>
-        <div>
+        <div class="bg-rgreen-100 p-40">
             <Footer2/>
         </div>
     </section>

@@ -1,32 +1,65 @@
 <script setup>
     import Logo from "../components/Logo.vue"
     import axios from "axios";
-    import { ref } from "vue";
+    import { onMounted, ref } from "vue";
     import { useRoute } from "vue-router";
 
+    const currentPath = ref("")
+    const routeParams = ref("")
+    const restaurantId = ref("")
+    const restaurant = ref({})
+    const restoItems = ref([])
+    const route = useRoute()
 
+
+    currentPath.value = route.path
+    routeParams.value = route.params
+
+
+    // get Restaurant ID
+    const getRestaurantId = async () => {
+        try {
+            const result = await axios.get(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1${currentPath.value}`);
+            restaurantId.value = result.data.id
+            restaurant.value = result.data
+
+        } catch(error) {
+            alert("No Restaurant Available\n\nCreate a New Resaturant")
+            console.log(error)
+        }
+    }
+
+    // Delete Restaurant
+    const deleteRestaurant = async () => {
+        try {
+            const result = await axios.delete(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/restaurants/${restaurantId.value}`);
+            alert("Restaurant Deleted Successfully!")
+
+        } catch(error) {
+            alert("No Resatuarant Exist")
+            console.log(error)
+        }
+    }
+
+
+    // Submit form for Restaurant
     const restaurantData = ref({
         name: '',
         address: '',
     });
 
-    const imagefile = ref();
-    const currentPath = ref("")
-    const route = useRoute()
-
-    currentPath.value = route.path
-    console.log(currentPath.value)
-
-    const handleFileChange = (event) => {
-      imagefile.value = event.target.files[0];
+    const restoImage = ref();
+   
+    const restoHandleFileChange = (event) => {
+      restoImage.value = event.target.files[0];
     };
 
-    const submitForm = async () => {
+    const submitRestoForm = async () => {
         try {
             const formData = new FormData();
             formData.append('name', restaurantData.value.name)
             formData.append('address', restaurantData.value.address)
-            formData.append('image', imagefile.value)
+            formData.append('image', restoImage.value)
 
             const response = await axios.post(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1${currentPath.value}`, formData);
             alert("upload successful")
@@ -35,103 +68,229 @@
             alert(error)
             console.error('Upload Failed:', error);
         }
-
     };
 
+    // Submit form for Items
+    const itemData = ref({
+        name: '',
+        price: '',
+    });
+
+    const itemImage = ref();
+
+    const itemHandleFileChange = (event) => {
+      itemImage.value = event.target.files[0];
+    };
+
+    const submitItemForm = async () => {
+        try {
+            const formData = new FormData();
+            formData.append('name', itemData.value.name)
+            formData.append('price', itemData.value.price)
+            formData.append('image', itemImage.value)
+
+            const response = await axios.post(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/restaurants/${restaurantId.value}/items`, formData);
+            alert("upload successful")
+
+        } catch (error) {
+            console.error('Upload Failed:', error);
+        }
+    };
+
+    // update Restaurant Name
+    const updateRestoName = async () => {
+        try {
+            const formData = new FormData();
+            formData.append('name', restaurantData.value.name)
+
+            const response = await axios.put(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/restaurants/${restaurantId.value}`, formData);
+            alert("update successful")
+
+        } catch (error) {
+            alert(error)
+            console.error('Update Failed:', error);
+        }
+    };
+     // update Restaurant Address
+     const updateRestoAddress = async () => {
+        try {
+            const formData = new FormData();
+            formData.append('address', restaurantData.value.address)
+
+            const response = await axios.put(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/restaurants/${restaurantId.value}`, formData);
+            alert("update successful")
+
+        } catch (error) {
+            alert(error)
+            console.error('Update Failed:', error);
+        }
+    };
+
+     // update Restaurant Address
+     const updateRestoImage= async () => {
+        try {
+            const formData = new FormData();
+            formData.append('image', restoImage.value)
+
+            const response = await axios.put(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/restaurants/${restaurantId.value}/image`, formData);
+            alert("update successful")
+
+        } catch (error) {
+            alert(error)
+            console.error('Update Failed:', error);
+        }
+    };
+
+    // get Restaurant items
+    const getRestoItems = async () => {
+        try {
+            console.log(restaurantId.value)
+            const response = await axios.get(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/restaurants/${restaurantId.value}/items`);
+            restoItems.value = response.data
+            console.log(response.data)
+
+        } catch (error) {
+            alert(error)
+            console.error('Failed to get items:', error);
+        }
+    };
+
+
+    // update item Name
+    const updateItemName = async (itemId) => {
+        try {
+            const formData = new FormData();
+            formData.append('name', itemData.value.name)
+
+            const response = await axios.put(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/items/${itemId}`, formData);
+            alert("update successful")
+
+        } catch (error) {
+            alert(error)
+            console.error('Update Failed:', error);
+        }
+    };
+     // update Item Price
+     const updateItemPrice = async (itemId) => {
+        try {
+            const formData = new FormData();
+            formData.append('price', itemData.value.price)
+
+            const response = await axios.put(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/items/${itemId}`, formData);
+            alert("update successful")
+
+        } catch (error) {
+            alert(error)
+            console.error('Update Failed:', error);
+        }
+    };
+
+     // update Item Image
+     const updateItemImage= async (itemId) => {
+        try {
+            const formData = new FormData();
+            formData.append('image', itemImage.value)
+
+            const response = await axios.put(`https://restokonnectapi-8d0b7b86e6bb.herokuapp.com/api/v1/items/${itemId}/image`, formData);
+            alert("update successful")
+
+        } catch (error) {
+            alert(error)
+            console.error('Update Failed:', error);
+        }
+    };
+
+    onMounted(async () => {
+        await getRestaurantId();
+        getRestoItems();
+    });
+
 </script>
+
 <template>
-    <section class="bg-[#F2FCF2]">
-        <div class="p-10">
+    <section class="bg-[#F2FCF2] lg:p-16 p-2">
+        <div>
             <Logo/>
-            <div class="my-10">
-                <h1 class="text-3xl font-bold">Your Restaurant</h1>
-                <span>Fill in your resturant details</span>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 justify-between ">
+            <div>
+                <div class="my-10">
+                    <h1 class="text-3xl font-bold">Your Restaurant</h1>
+                    <span>Fill in your resturant details</span>
+                </div>
+                <div class="flex justify-center">
+                    <form @submit.prevent="submitRestoForm" action="" class=" w-4/5 border">
+                        <div class="">
+                            <label for="name" class="block text-xl font-semibold">Name of Restaurant</label>
+                            <input v-model="restaurantData.name" type="text" name="name" id="name" class="w-full border-2 rounded p-3" :placeholder="restaurant.name" required>
+                            <div class="flex justify-end">
+                                <button @click="updateRestoName()" class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                        <div class="">
+                            <label for="image" class="block text-xl font-semibold">Restaurant Wallpaper</label>
+                            <input v-bind="restoImage" @change="restoHandleFileChange" type="file" name="image" id="image" class="w-full border-2 rounded p-3" required>
+                            <div class="flex justify-end">
+                                <button @click="updateRestoImage" class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                        <div class="">
+                            <label for="address" class="block text-xl font-semibold">Restaurant Address</label>
+                            <input v-model="restaurantData.address" type="text" name="address" id="address" class="w-full border-2 rounded p-3" :placeholder="restaurant.address" required>
+                            <div class="flex justify-end">
+                                <button @click="updateRestoAddress()" class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="lg:w-full text-white bg-rgreen-100 hover:bg-ryellow font-semibold rounded-lg lg:text-lg px-5 py-2.5 text-center mt-5">Upload</button>
+                    </form>
+                </div>
+                <button @click="deleteRestaurant()" class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
+                    Delete Restaurant
+                </button>
             </div>
-            <div class="flex justify-center">
-                <form @submit.prevent="submitForm" @change="handleFileChange" action="" class=" w-4/5">
-                    <div class="w-1/2">
-                        <label for="name" class="block text-xl font-semibold">Name of Restaurant</label>
-                        <input v-model="restaurantData.name" type="text" name="name" id="name" class="w-full border-2 rounded p-3" placeholder="Name of Restaurant" required>
-                        <div>
-                            <div class="flex justify-end">
-                                <button class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
-                                    Update
-                                </button>
-                            </div>
+            <div>
+                <div class="my-10">
+                    <h1 class="text-3xl font-bold">Your Menu</h1>
+                    <span>Upload images of your meals and add a description.</span>
+                </div>
+                <div class="flex justify-center">
+                    <form @submit.prevent="submitItemForm" action="" class=" w-4/5">
+                        <div class=" mb-5">
+                            <label for="itemName" class="block text-xl font-semibold">Name of Food</label>
+                            <input v-model="itemData.name" type="text" name="itemName" id="itemName" class="w-full border-2 rounded p-3" placeholder="Name of Item" required>
                         </div>
-                    </div>
-                    <div class="w-1/2">
-                        <label for="image" class="block text-xl font-semibold">Restaurant Wallpaper</label>
-                        <input v-bind="restaurantData.image" type="file" name="image" id="image" class="w-full border-2 rounded p-3" required>
-                        <div>
-                            <div class="flex justify-end">
-                                <button class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
-                                    Update
-                                </button>
-                            </div>
+                        <div class=" mb-5">
+                            <label for="itemImage" class="block text-xl font-semibold">Image of Food</label>
+                            <input @change="itemHandleFileChange" type="file" name="itemImage" id="itemImage" class="w-full border-2 rounded p-3" required> 
                         </div>
-                    </div>
-                    <div class="w-1/2">
-                        <label for="address" class="block text-xl font-semibold">Restaurant Address</label>
-                        <input v-model="restaurantData.address" type="text" name="address" id="address" class="w-full border-2 rounded p-3" placeholder="Restaurant Address" required>
-                        <div>
-                            <div class="flex justify-end">
-                                <button class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
-                                    Update
-                                </button>
-                            </div>
+                        <div class=" mb-5">
+                            <label for="price" class="block text-xl font-semibold">Price</label>
+                            <input v-model="itemData.price" type="text" name="price" id="price" class="w-full border-2 rounded p-3" placeholder="Item Price" required>
                         </div>
-                    </div>
-                    <button type="submit" class="w-1/2 text-white bg-rgreen-100 hover:bg-ryellow font-semibold rounded-lg lg:text-lg px-5 py-2.5 text-center mt-5">Upload</button>
-                </form>
+                        <button type="submit" class="w-full text-white bg-rgreen-100 hover:bg-ryellow font-semibold rounded-lg lg:text-lg px-5 py-2.5 text-center mt-5">Upload</button>
+                    </form>
+                    
+                </div>
             </div>
         </div>
-        <div class="p-10">
-            <div class="my-10">
-                <h1 class="text-3xl font-bold">Your Menu</h1>
-                <span>Upload images of your meals and add a description.</span>
+        <div class=" border lg:mt-16 mt-5 relative lg:mx-10 lg:grid lg:grid-cols-6 pb-5  gap-5 w-1120px md:w-85vw overflow-x-auto rounded-lg p-3 flex flex-wrap">
+                <div v-for="item in restoItems" :key="item.id" class=" w-64 h-80  border border-rgreen-100 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <img class="w-full h-2/4 " :src="item.image" alt="Card Image">
+                    <input @change="itemHandleFileChange" type="file" name="" id="">
+                    <button @click="updateItemImage(item.id)" class="mx-2 my-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white p-1 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
+                    <div class="h-1/2 bg-white">
+                        <input v-model="itemData.name" type="text" class="mx-2 border text-sm pl-2" :placeholder="item.name">
+                        <button @click="updateItemName(item.id)" class="my-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white p-1 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
+                        <input v-model="itemData.price" class="text-sm pl-2 border mx-2" :placeholder="item.price">
+                        <button @click="updateItemPrice(item.id)" class="my-2 text-sm bg-rgreen-100 hover:bg-ryellow text-white p-1 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">update</button>
+                    </div>
+                </div>
             </div>
-            <div class="flex justify-center">
-                <form action="" class=" w-4/5">
-                    <div class="w-1/2">
-                        <label for="name" class="block text-xl font-semibold">Name of Food</label>
-                        <input type="text" name="name" id="name" class="w-full border-2 rounded p-3" placeholder="Name of Restaurant" required>
-                        <div>
-                            <div class="flex justify-end">
-                                <button class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
-                                    Update
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-1/2">
-                        <label for="image" class="block text-xl font-semibold">Image of Food</label>
-                        <input type="file" name="image" id="image" class="w-full border-2 rounded p-3" required>
-                        <div>
-                            <div class="flex justify-end">
-                                <button class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
-                                    Update
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-1/2">
-                        <label for="address" class="block text-xl font-semibold">Price</label>
-                        <input type="text" name="address" id="address" class="w-full border-2 rounded p-3" placeholder="Restaurant Address" required>
-                        <div>
-                            <div class="flex justify-end">
-                                <button class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
-                                    Update
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="w-1/2 text-white bg-rgreen-100 hover:bg-ryellow font-semibold rounded-lg lg:text-lg px-5 py-2.5 text-center mt-5">Upload</button>
-                </form>
-            </div>
-            <button class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >
-                Delete Restaurant
-            </button>
-        </div>
     </section>
 </template>

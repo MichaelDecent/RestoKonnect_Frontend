@@ -11,27 +11,27 @@
             <nav class="mt-4 md:mt-0">
                 <ul class="flex space-x-4 md:space-x-6">
                     <li class="relative group">
-                        <RouterLink to="#" class="text-ryellow hover:text-rgreen-100 transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
+                        <RouterLink to="#" class="text-rgreen-100 hover:text-ryellow transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
                             Home
-                            <div class="absolute w-full h-1 bg-rgreen-100 bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
+                            <div class="absolute w-full h-1 bg-ryellow bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
                         </RouterLink>
                     </li>
                     <li class="relative group">
-                        <RouterLink to="#" class="text-ryellow hover:text-rgreen-100 transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
+                        <RouterLink to="#" class="text-rgreen-100 hover:text-ryellow transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
                             About Us
-                            <div class="absolute w-full h-1 bg-rgreen-100 bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
+                            <div class="absolute w-full h-1 bg-ryellow bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
                         </RouterLink>
                     </li>
                     <li class="relative group">
-                        <RouterLink to="/vendorSignIn" class="text-ryellow hover:text-rgreen-100 transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
+                        <RouterLink to="/vendorSignIn" class="text-rgreen-100 hover:text-ryellow transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
                             Vendor
-                            <div class="absolute w-full h-1 bg-rgreen-100 bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
+                            <div class="absolute w-full h-1 bg-ryellow bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
                         </RouterLink>
                     </li>
                     <li class="relative group">
-                        <RouterLink to="/customerSignIn" class="text-ryellow hover:text-rgreen-100 transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
+                        <RouterLink to="/customerSignIn" class="text-rgreen-100 hover:text-ryellow transition duration-300 ease-in-out relative group text-lg md:text-2xl font-semibold">
                             Customer
-                            <div class="absolute w-full h-1 bg-rgreen-100 bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
+                            <div class="absolute w-full h-1 bg-ryellow bottom-0 left-0 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100 duration-300 ease-in-out"></div>
                         </RouterLink>
                     </li>
                 </ul>

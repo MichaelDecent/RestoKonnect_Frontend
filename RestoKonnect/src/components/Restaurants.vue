@@ -27,17 +27,17 @@
 
 <template>
 
-    <div class="lg:mt-16 mt-5 relative lg:mx-10 lg:grid lg:grid-cols-3 pb-5 lg:pl-36 gap-4 w-1120px md:w-85vw overflow-x-auto border border-white rounded-lg p-3 flex flex-wrap">
+    <div class="lg:mt-16 mt-5 relative lg:mx-10 lg:grid lg:grid-cols-3 pb-5 lg:pl-36 gap-4 w-1120px md:w-85vw overflow-x-auto rounded-lg p-3 flex flex-wrap">
         <div v-for="resto in restaurants" :key="resto.id"
-        class="max-w-xs h-fit rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img class="w-full" :src="resto.image" alt="Card Image">
-            <div class="px-2 py-4 bg-white flex items-center justify-between">
+        class=" w-96 h-96 border border-rgreen-100 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <img class="w-full h-3/4" :src="resto.image" alt="Card Image">
+            <div class=" h-1/4 px-2 py-4 bg-white flex items-center justify-between">
                 <span class="font-bold lg:text-xl mb-2 w-auto mt-3">{{ resto.name }}</span>
                 <button @click=" router.push(`/restaurants/${resto.id}`)" class="bg-rgreen-100 hover:bg-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out">View Menu</button>
             </div>
         </div>
     </div>
-    <div class="flex justify-end mx-5">
-        <button class="bg-white hover:text-ryellow text-rgreen-100 font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >View More</button>
+    <div class="flex justify-end p-10">
+        <button class="bg-rgreen-100 hover:text-ryellow text-white font-semibold p-2 rounded transform hover:scale-105 transition-transform duration-300 ease-in-out mt-5" >View More</button>
     </div>
 </template>
