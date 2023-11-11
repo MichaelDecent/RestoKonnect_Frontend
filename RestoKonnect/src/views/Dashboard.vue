@@ -219,7 +219,7 @@
                     <span>Fill in your resturant details</span>
                 </div>
                 <div class="flex justify-center">
-                    <form @submit.prevent="submitRestoForm" action="" class=" w-4/5 border">
+                    <form @submit.prevent="submitRestoForm" action="" class=" w-4/5">
                         <div class="">
                             <label for="name" class="block text-xl font-semibold">Name of Restaurant</label>
                             <input v-model="restaurantData.name" type="text" name="name" id="name" class="w-full border-2 rounded p-3" :placeholder="restaurant.name" required>
@@ -279,7 +279,7 @@
                 </div>
             </div>
         </div>
-        <div class=" border lg:mt-16 mt-5 relative lg:mx-10 lg:grid lg:grid-cols-6 pb-5  gap-5 w-1120px md:w-85vw overflow-x-auto rounded-lg p-3 flex flex-wrap">
+        <div class="lg:mt-16 mt-5 relative lg:mx-10 lg:grid lg:grid-cols-6 pb-5  gap-5 w-1120px md:w-85vw overflow-x-auto rounded-lg p-3 flex flex-wrap">
                 <div v-for="item in restoItems" :key="item.id" class=" w-64 h-80  border border-rgreen-100 rounded-lg overflow-hidden mt-5 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img class="w-full h-2/4 " :src="item.image" alt="Card Image">
                     <input @change="itemHandleFileChange" type="file" name="" id="">
