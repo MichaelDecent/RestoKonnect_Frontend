@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="flex justify-end px-3 pb-2">
-                        <span class="text-rgreen-100">Price - N200</span>
+                        <span class="text-rgreen-100">Price - N{{ item.price }}</span>
                     </div> 
                 </div>
             </div>
